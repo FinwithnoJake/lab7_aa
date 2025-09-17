@@ -1,0 +1,61 @@
+package client.command;
+
+import client.handlers.SessionHandler;
+import client.netw.TCP;
+import client.util.console.Console;
+import common.exceptions.*;
+import common.build.request.*;
+import common.build.response.*;
+
+import java.io.IOException;
+
+/**
+ * Команда 'remove_by_id'. Удаляет элемент из коллекции.
+ *
+ */
+public class RemoveById extends Command {
+    private final Console console;
+    private final TCP client;
+
+    /**
+     * Instantiates a new Remove by id.
+     *
+     * @param console the console
+     * @param client  the client
+     */
+    public RemoveById(Console console, TCP client) {
+        super("remove_by_id <ID>");
+        this.console = console;
+        this.client = client;
+    }
+
+    /**
+     * Выполняет команду
+     * @return Успешность выполнения команды.
+     */
+    @Override
+    public boolean apply(String[] arguments) {
+        try {
+            if (arguments[1].isEmpty()) throw new WrongAmountOfElements();
+            var id = Integer.parseInt(arguments[1]);
+
+            var response = (RemoveByIdRes) client.sendAndReceiveCommand(new RemoveByIdReq(id, SessionHandler.getCurrentUser()));
+            if (response.getError() != null && !response.getError().isEmpty()) {
+                throw new API(response.getError());
+            }
+
+            console.println("City успешно удален.");
+            return true;
+        } catch (WrongAmountOfElements exception) {
+            console.printError("Неправильное количество аргументов!");
+            console.println("Использование: '" + getName() + "'");
+        } catch (NumberFormatException exception) {
+            console.printError("ID должен быть представлен числом!");
+        } catch(IOException e) {
+            console.printError("Ошибка взаимодействия с сервером");
+        } catch (API e) {
+            console.printError(e.getMessage());
+        }
+        return false;
+    }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "nncity",
+    "coordinates": {
+      "x": 1,
+      "y": 1
+    },
+    "creationDate": "1111-11-11",
+    "area": 1.0,
+    "population": 1,
+    "metersAboveSeaLevel": 1.0,
+    "carCode": 1,
+    "agglomeration": 1,
+    "government": "DIARCHY",
+    "human": null
+  },
+  {
+    "id": 2,
+    "name": "moscow",
+    "coordinates": {
+      "x": 4,
+      "y": 6
+    },
+    "creationDate": "1148-12-11",
+    "area": 750.0,
+    "population": 1233,
+    "metersAboveSeaLevel": 67.0,
+    "carCode": 10,
+    "agglomeration": 56,
+    "government": "DIARCHY",
+    "human": null
+  },
+  {
+    "id": 3,
+    "name": "Paris",
+    "coordinates": {
+      "x": 48,
+      "y": 2
+    },
+    "creationDate": "0508-01-01",
+    "area": 20.0,
+    "population": 2100,
+    "metersAboveSeaLevel": 33.0,
+    "carCode": 75,
+    "agglomeration": 11000,
+    "government": "DEMOCRACY",
+    "human": null
+  },
+  {
+    "id": 4,
+    "name": ":\u0027)",
+    "coordinates": {
+      "x": 52,
+      "y": 228
+    },
+    "creationDate": "1010-01-01",
+    "area": 123456.0,
+    "population": 654321,
+    "metersAboveSeaLevel": 121.0,
+    "carCode": 55,
+    "agglomeration": 1001,
+    "government": "DEMOCRACY",
+    "human": null
+  }
+]

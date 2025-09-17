@@ -1,0 +1,72 @@
+package client.command;
+
+import client.forms.RegisterForm;
+import client.handlers.SessionHandler;
+import client.netw.TCP;
+import client.util.console.Console;
+import common.build.request.RegisterReq;
+import common.build.response.RegisterRes;
+import common.exceptions.API;
+import common.exceptions.InvalidForm;
+import common.exceptions.WrongAmountOfElements;
+
+import java.io.IOException;
+
+public class Register extends Command {
+
+    private final Console console;
+    private final TCP client;
+
+    public Register(Console console, TCP client) {
+        super("register");
+        this.console = console;
+        this.client = client;
+    }
+
+    /**
+     * Выполняет команду
+     *
+     * @return Успешность выполнения команды.
+     */
+    @Override
+    public boolean apply(String[] arguments) {
+        try {
+            if (!arguments[1].isEmpty()) throw new Exception();
+            console.println("Создание ЮЗерка:");
+
+            var user = (new RegisterForm(console)).build();
+
+            var response = (RegisterRes) client.sendAndReceiveCommand(new RegisterReq(user));
+            if (response.getError() != null && !response.getError().isEmpty()) {
+                throw new API(response.getError());
+            }
+
+            SessionHandler.setCurrentUser(response.user);
+            console.println("Поздравляю ЮзЕрОк " + response.user.getName() +
+                    " с id=" + response.user.getId() + " теперь может добавлять города" +
+                    "(и так блинб перенаселение, так и ты еще тут)" +
+                    "((давай наоборот...)) " +
+                    "(ง ͠ ᵒ̌ Дᵒ̌)¤=[]:::::&gt;           ᕕ(⁽ ⁾བ ⁽ ْ ⁾ ╬)ᕗ");
+            return true;
+
+        } catch (WrongAmountOfElements exception) {
+            console.printError("Неправильное количество аргументов!");
+            console.println("Использование: '" + getName() + "'");
+        } catch (InvalidForm exception) {
+            console.printError("Введенные данные не валидны! Пользователь на зарегистрирован");
+        } catch (IOException e) {
+            console.printError("Ошибка взаимодействия с сервером");
+        } catch (API e) {
+            console.printError(e.getMessage());
+        } catch (Exception e) {
+            console.printError(e.getMessage());
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isNeedAuth() {
+        return false;
+    }
+
+}

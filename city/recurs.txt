@@ -1,0 +1,3 @@
+info
+execute_script root/Documents/IdeaProjects/lab6_aa/city/recurs.txt
+info
