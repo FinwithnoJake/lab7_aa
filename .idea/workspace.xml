@@ -87,11 +87,11 @@
       <recent name="$PROJECT_DIR$/server/src/main/java/server" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="server.commands" />
       <recent name="client.command" />
       <recent name="common.build.response" />
       <recent name="common.util" />
       <recent name="common.model" />
-      <recent name="server.managers" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.lab7_aa:server [run]">
@@ -239,8 +239,27 @@
       <option name="project" value="LOCAL" />
       <updated>1758157903187</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bob">
+      <option name="closed" value="true" />
+      <created>1758159574598</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758159574598</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="boob" />
