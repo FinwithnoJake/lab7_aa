@@ -1,0 +1,23 @@
+2025-09-18 02:42:17 ERROR ServerLogger - Ошибка выполнения команды : server.repo.auth.exceptions.BadCredentialsException: Неверные учетные данные. Пожалуйста, войдите в свой аккаунт.
+server.repo.auth.exceptions.BadCredentialsException: Неверные учетные данные. Пожалуйста, войдите в свой аккаунт.
+	at server.handler.CommandHandler.handle(CommandHandler.java:28) ~[main/:?]
+	at server.network.TCPServer.run(TCPServer.java:131) ~[main/:?]
+	at server.network.TCPDatagramServer.run(TCPDatagramServer.java:19) ~[main/:?]
+	at server.ServerApp.main(ServerApp.java:70) ~[main/:?]
+2025-09-18 02:43:32 ERROR ServerLogger - Ошибка выполнения команды : server.repo.auth.exceptions.BadCredentialsException: Неверные учетные данные. Пожалуйста, войдите в свой аккаунт.
+server.repo.auth.exceptions.BadCredentialsException: Неверные учетные данные. Пожалуйста, войдите в свой аккаунт.
+	at server.handler.CommandHandler.handle(CommandHandler.java:28) ~[main/:?]
+	at server.network.TCPServer.run(TCPServer.java:131) ~[main/:?]
+	at server.network.TCPDatagramServer.run(TCPDatagramServer.java:19) ~[main/:?]
+	at server.ServerApp.main(ServerApp.java:70) ~[main/:?]
+2025-09-18 03:41:59 ERROR ServerLogger - Случилась ошибка сокета
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:555) ~[?:?]
+	at sun.nio.ch.DatagramChannelImpl.bindInternal(DatagramChannelImpl.java:1194) ~[?:?]
+	at sun.nio.ch.DatagramChannelImpl.bind(DatagramChannelImpl.java:1164) ~[?:?]
+	at sun.nio.ch.DatagramSocketAdaptor.bind(DatagramSocketAdaptor.java:107) ~[?:?]
+	at java.net.DatagramSocket.createDelegate(DatagramSocket.java:1426) ~[?:?]
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:330) ~[?:?]
+	at server.network.TCPDatagramServer.<init>(TCPDatagramServer.java:37) ~[main/:?]
+	at server.ServerApp.main(ServerApp.java:69) ~[main/:?]

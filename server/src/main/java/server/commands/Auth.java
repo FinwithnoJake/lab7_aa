@@ -12,7 +12,7 @@ public class Auth extends Command {
     private final AuthManager authManager;
 
     public Auth(AuthManager authManager) {
-        super(Commands.AUTH, "Войти в системку под юзерка, ведь мы любим создавать убийц ура =)");
+        super(Commands.AUTH, "Войти в системку под юзерка, ведь мы любим делать бред =)");
         this.authManager = authManager;
     }
 

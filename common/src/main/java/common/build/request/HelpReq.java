@@ -4,17 +4,50 @@ import common.model.User;
 import common.util.Commands;
 
 /**
- * The type Help req.
+ * Запрос на получение справки
  */
 public class HelpReq extends Request {
+    private User user;
+
     /**
-     * Instantiates a new Help req.
+     * Конструктор для неавторизованного пользователя
+     */
+    public HelpReq() {
+        super(Commands.HELP, new User());
+        this.user = null;
+    }
+
+    /**
+     * Конструктор для авторизованного пользователя
+     * @param user текущий пользователь
      */
     public HelpReq(User user) {
         super(Commands.HELP, user);
+        this.user = user;
     }
+
+    /**
+     * Возвращает информацию о пользователе
+     * @return объект User или null
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Проверяет необходимость авторизации
+     * @return true, если требуется авторизация
+     */
     @Override
     public boolean isAuth() {
-        return true;
+        return user != null;
+    }
+
+    /**
+     * Проверка на null для пользователя
+     * @return true, если пользователь не null
+     */
+    public boolean hasUser() {
+        return user != null;
     }
 }

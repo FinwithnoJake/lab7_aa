@@ -5,6 +5,7 @@ import client.netw.TCP;
 import client.util.console.Console;
 import common.build.request.HelpReq;
 import common.build.response.HelpRes;
+import common.model.User;
 
 import java.io.IOException;
 
@@ -41,12 +42,23 @@ public class Help extends Command {
         }
 
         try {
-            var response = (HelpRes) client.sendAndReceiveCommand(new HelpReq(SessionHandler.getCurrentUser()));
+            // Определяем, есть ли авторизованный пользователь
+            User currentUser = SessionHandler.getCurrentUser();
+
+            // Формируем запрос с учетом авторизации
+            HelpReq request;
+            if (currentUser != null) {
+                request = new HelpReq(currentUser);
+            } else {
+                request = new HelpReq(null);
+            }
+
+            var response = (HelpRes) client.sendAndReceiveCommand(request);
             console.print(response.helpMessage);
             return true;
-        } catch(IOException e) {
+        } catch (IOException e) {
             console.printError("Ошибка взаимодействия с сервером");
+            return false;
         }
-        return false;
     }
 }

@@ -9,6 +9,7 @@ import server.repo.auth.AuthRepository;
 import server.repo.auth.exceptions.UserNotExistException;
 
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -70,8 +71,13 @@ public class AuthManager {
     }
 
     private String generatePasswordHash(String password, String salt) {
-        return Hashing.sha256()
-                .hashString(pepper + password + salt, StandardCharsets.UTF_8)
-                .toString();
+        try {
+            return Hashing.sha256()
+                    .hashString(pepper + password + salt, StandardCharsets.UTF_8)
+                    .toString();
+        } catch (Exception e) {
+            logger.error("Ошибка при хешировании пароля", e);
+            throw new RuntimeException(e);
+        }
     }
 }

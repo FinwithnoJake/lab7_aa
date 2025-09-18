@@ -64,31 +64,44 @@ public class AuthenthicateForm extends Form<User> {
      */
     protected String askPassword() throws Exception {
         String password = "";
-        var fileMode = Interrogator.fileMode();
+        boolean fileMode = Interrogator.fileMode();
+
         while (true) {
             try {
                 console.println("Введите пароль пользователя:");
                 console.ps2();
 
                 password = readPassword();
-                if (fileMode) console.println(password);
 
-                if (password.equals("")) throw new Exception();
-                break;
-            } catch (NoSuchElementException exception) {
-                console.printError("Пароль пользователя не распознан!");
-                if (fileMode) throw new Exception();
-                break;
-            } catch (Exception exception) {
-                console.printError("Пароль не должен быть пустым!");
-                if (fileMode) throw new Exception();
-                break;
+                if (fileMode) {
+                    console.println(password);
+                }
 
+                if (password.isBlank()) {
+                    throw new IllegalArgumentException("Пароль не может быть пустым");
+                }
+
+                break; // Выходим из цикла, если все хорошо
+
+            } catch (NoSuchElementException e) {
+                console.printError("Ошибка: пароль не распознан!");
+                if (fileMode) {
+                    throw new Exception("Пароль не распознан");
+                }
+                return "";
+
+            } catch (IllegalArgumentException e) {
+                console.printError(e.getMessage());
+                if (fileMode) {
+                    throw new Exception("Пароль не может быть пустым");
+                }
+
+            } catch (Exception e) {
+                console.printError("Произошла непредвиденная ошибка: " + e.getMessage());
+                if (fileMode) {
+                    throw new Exception("Непредвиденная ошибка");
+                }
             }
-//            catch (IllegalStateException exception) {
-//                console.printError("Непредвиденная ошибка!");
-//                System.exit(0);
-//            }
         }
 
         return password;

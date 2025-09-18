@@ -2,7 +2,6 @@ package server;
 
 import common.util.Commands;
 import io.github.cdimascio.dotenv.Dotenv;
-
 import org.checkerframework.checker.units.qual.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +28,7 @@ public class ServerApp {
 
     public static Dotenv dotenv = Dotenv
             .configure()
-            .directory("../")
+            .directory("./")
             .load();
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
@@ -40,7 +39,7 @@ public class ServerApp {
 
         if (url == null || url.isEmpty() || user == null || user.isEmpty() || password == null || password.isEmpty()) {
             System.out.println("В .env файле не обнаружены данные для подключения к базе данных, введи норм данные лох на овнере");
-            System.exit(1);
+            //System.exit(1);
         }
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(url, user, password);
@@ -76,4 +75,5 @@ public class ServerApp {
         }
 
     }
-}// ./gradlew server:run
+}
+// ./gradlew server:run

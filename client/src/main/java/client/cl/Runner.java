@@ -56,12 +56,15 @@ public class Runner {
             put(Commands.EXIT, new Exit(console, client));
             put(Commands.HEAD, new Head(console, client));
             put(Commands.HELP, new Help(console, client));
-            put(Commands.HISTORY, new Help(console, client));
+//            put(Commands.HISTORY, new History(console, client));
             put(Commands.INFO, new Info(console, client));
             put(Commands.REMOVE_BY_ID, new RemoveById(console, client));
             put(Commands.SHOW, new Show(console, client));
             put(Commands.TAIL, new Tail(console, client));
             put(Commands.UPDATE, new Update(console, client));
+
+            put(Commands.REGISTER, new Register(console, client));
+            put(Commands.AUTH, new Auth(console, client));
         }};
     }
 
@@ -161,7 +164,10 @@ public class Runner {
         }
 
         if (command.isNeedAuth() && SessionHandler.getCurrentUser() == null) {
-            console.printError("зАлОгИнЬсЯ");
+            console.printError("Для выполнения команды требуется авторизация");
+            console.println("Используйте одну из команд:");
+            console.println("  * auth - для входа в систему");
+            console.println("  * register - для регистрации нового пользователя");
             return ExitCode.ERROR;
         }
 

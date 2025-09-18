@@ -19,10 +19,10 @@ CREATE TABLE IF NOT EXISTS city (
     y BIGINT NOT NULL,
     creation_date DATE DEFAULT NOW() NOT NULL,
     area FLOAT NOT NULL,
-    population LONG NOT NULL,
+    population BIGINT NOT NULL,
     metersAboveSeaLevel FLOAT NOT NULL,
-    carCode LONG NOT NULL,
-    agglomeration LONG NOT NULL,
+    carCode BIGINT NOT NULL,
+    agglomeration BIGINT NOT NULL,
     Government government,
     human VARCHAR,
     owner_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE

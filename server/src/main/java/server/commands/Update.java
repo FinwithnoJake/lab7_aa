@@ -28,10 +28,10 @@ public class Update extends Command {
             if (!service.isExist(req.id)) {
                 return new UpdateRes("Продукта с таким ID в коллекции нет!");
             }
-            if (!req.updatedPerson.validate()) {
+            if (!req.updatedCity.validate()) {
                 return new UpdateRes("Поля продукта не валидны! Продукт не обновлен!");
             }
-            service.updateCity(req.getUser(), req.updatedPerson);
+            service.updateCity(req.getUser(), req.updatedCity);
             return new UpdateRes(null);
         } catch (Exception e) {
             return new UpdateRes(e.toString());

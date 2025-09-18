@@ -23,7 +23,7 @@ public class CityJDBCBasedRepository {
     public int add(User user, City city) throws SQLException {
         int id = user.getId();
         String query = INSERT + TABLE_CITY
-                + "(name, x, y, creation_date, area, population, meters_above_sea_level, car_code, agglomeration, government, human, owner_id)" +
+                + "(name, x, y, creation_date, area, population, metersAboveSeaLevel, carCode, agglomeration, government, human, owner_id)" +
                 " VALUES (?,?,?,?,?,?,?,?,?,?,?,?) RETURNING id;";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, city.getName());
@@ -56,8 +56,8 @@ public class CityJDBCBasedRepository {
                 creation_date = ?,
                 area = ?,
                 population = ?,
-                meters_above_sea_level = ?,
-                car_code = ?
+                metersAboveSeaLevel = ?,
+                carCode = ?
                 agglomeration = ?
                 government = ?
                 human = ?
@@ -85,7 +85,7 @@ public class CityJDBCBasedRepository {
 
     public City getCIty(int id) throws SQLException {
         PreparedStatement statement = connection.prepareStatement
-                (SELECT + "name, x, y, creation_date, area, population, meters_above_sea_level, car_code, agglomeration, government, human, owner_id, creation_date"
+                (SELECT + "name, x, y, creation_date, area, population, metersAboveSeaLevel, carCode, agglomeration, government, human, owner_id, creation_date"
                         + FROM + TABLE_CITY + " as c " + WHERE + "? = c.id;");
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
@@ -96,7 +96,7 @@ public class CityJDBCBasedRepository {
     }
 
     public Collection<City> readCollection() throws SQLException {
-        String query = SELECT + "id, name, x, y, creation_date, area, population, meters_above_sea_level, car_code, agglomeration, government, human, owner_id, creation_date "
+        String query = SELECT + "id, name, x, y, creation_date, area, population, metersAboveSeaLevel, carCode, agglomeration, government, human, owner_id, creation_date "
                 + FROM + TABLE_CITY + ";";
         PreparedStatement statement = connection.prepareStatement(query);
         ResultSet resultSet = statement.executeQuery();

@@ -43,9 +43,9 @@ public class Register extends Command {
 
             SessionHandler.setCurrentUser(response.user);
             console.println("Поздравляю ЮзЕрОк " + response.user.getName() +
-                    " с id=" + response.user.getId() + " теперь может добавлять города" +
-                    "(и так блинб перенаселение, так и ты еще тут)" +
-                    "((давай наоборот...)) " +
+                    " с id=" + response.user.getId() + " теперь может добавлять города\n" +
+                    "(и так блинб перенаселение, так и ты еще тут)\n" +
+                    "((давай наоборот...))\n" +
                     "(ง ͠ ᵒ̌ Дᵒ̌)¤=[]:::::&gt;           ᕕ(⁽ ⁾བ ⁽ ْ ⁾ ╬)ᕗ");
             return true;
 

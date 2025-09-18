@@ -32,12 +32,24 @@ public abstract class Command {
 
     public Class<? extends Response> getTargetClassCastOrErrorResponse(Class<? extends Command> initCommandClazz) {
         try {
+            // Формируем имя пакета и класса
             String packageName = "common.build.response";
             String className = initCommandClazz.getSimpleName() + "Res";
             String fullClassName = packageName + "." + className;
-            return (Class<? extends Response>) Class.forName(fullClassName);
-        } catch (Exception e) {
-            throw new RuntimeException();
+
+            // Получаем класс и проверяем его наследование от Response
+            Class<?> clazz = Class.forName(fullClassName);
+            if (!Response.class.isAssignableFrom(clazz)) {
+                throw new IllegalArgumentException("Класс " + fullClassName + " не наследуется от Response");
+            }
+
+            // Безопасное приведение типа
+            return clazz.asSubclass(Response.class);
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Класс не найден: " + e.getMessage(), e);
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException("Ошибка приведения типа: " + e.getMessage(), e);
         }
 
     }

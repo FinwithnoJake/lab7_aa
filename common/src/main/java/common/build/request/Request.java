@@ -57,4 +57,5 @@ public abstract class Request implements Serializable {
     public boolean isAuth() {
         return false;
     }
+
 }
