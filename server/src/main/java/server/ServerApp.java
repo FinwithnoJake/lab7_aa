@@ -58,6 +58,7 @@ public class ServerApp {
             register(Commands.INFO, new Info(cityService));
             register(Commands.REMOVE_BY_ID, new RemoveById(cityService));
             register(Commands.SHOW, new Show(cityService));
+            register(Commands.SUM_OF_POPULATION, new SumOfPopulation(cityService));
             register(Commands.TAIL, new Tail(cityService));
             register(Commands.UPDATE, new Update(cityService));
 

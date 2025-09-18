@@ -4,89 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d0b3b4e-7f7a-49b6-af85-bbbc1ac0b55c" name="Changes" comment="boob">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/city/add.txt" beforeDir="false" afterPath="$PROJECT_DIR$/city/add.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/ClientApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/ClientApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Clear.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Clear.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Exit.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Exit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Head.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Help.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Help.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/RemoveById.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/RemoveById.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Show.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Tail.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Tail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Update.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Update.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/CityForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/CityForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/CoordinatesForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/CoordinatesForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/Form.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/Form.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/GovernmentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/GovernmentForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/HumanForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/netw/TCP.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/netw/TCP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/distributions/client.tar" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/distributions/client.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/distributions/client.zip" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/distributions/client.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/libs/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/libs/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/scripts/client" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/scripts/client" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/scripts/client.bat" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/scripts/client.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/compileTransaction/stash-dir/ClientApp.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/compileTransaction/stash-dir/Runner$1.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/compileTransaction/stash-dir/Runner$ExitCode.class.uniqueId3" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/tmp/compileJava/compileTransaction/stash-dir/Runner$ExitCode.class.uniqueId3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/compileTransaction/stash-dir/Runner.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/compileTransaction/stash-dir/TCP.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/forms/AuthenthicateForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/forms/AuthenthicateForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/build/request/HelpReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/classes/java/main/common/build/request/HelpReq.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/build/request/UpdateReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/classes/java/main/common/build/request/UpdateReq.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/build/response/HelpRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/classes/java/main/common/build/response/HelpRes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build/libs/common.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/libs/common.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/build/request/HelpReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/build/request/HelpReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/build/request/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/build/request/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/build/request/UpdateReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/build/request/UpdateReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/build/response/HelpRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/build/response/HelpRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/server.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Update.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Update.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/managers/AuthManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/managers/AuthManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/repo/CityJDBCBasedRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/repo/CityJDBCBasedRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/distributions/server.tar" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/distributions/server.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/distributions/server.zip" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/distributions/server.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/libs/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/libs/server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/scripts/server" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/scripts/server" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/scripts/server.bat" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/scripts/server.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AuthManager.class.uniqueId10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ServerApp.class.uniqueId4" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ServerApp.class.uniqueId4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/ServerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/managers/AuthManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/managers/AuthManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/playcheck/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/playcheck/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/repo/CityJDBCBasedRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/repo/CityJDBCBasedRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d0b3b4e-7f7a-49b6-af85-bbbc1ac0b55c" name="Changes" comment="bob" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -313,12 +231,21 @@
       <option name="project" value="LOCAL" />
       <updated>1758147631708</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="bob">
+      <option name="closed" value="true" />
+      <created>1758157903187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758157903187</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="boob" />
-    <option name="LAST_COMMIT_MESSAGE" value="boob" />
+    <MESSAGE value="bob" />
+    <option name="LAST_COMMIT_MESSAGE" value="bob" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
