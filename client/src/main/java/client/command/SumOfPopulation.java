@@ -43,7 +43,7 @@ public class SumOfPopulation extends Command {
                 console.printError("Вы не залогинены, войдите");
             }
             if (response.getClass().equals(NoSuchCommandRes.class)) {
-                console.printError("??? дурачок залогинься");
+                console.printError("???");
             }
             if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
                 console.println("Общее количество человеков: " + ((SumOfPopulationRes) response).sum);

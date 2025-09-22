@@ -45,12 +45,12 @@ public class Add extends Command {
                 console.printError("Вы не залогинены, войдите");
             }
             if (response.getClass().equals(NoSuchCommandRes.class)) {
-                console.printError("??? дурачок залогинься");
+                console.printError("???");
             }
-
-
-            console.println("Новый city с id=" + ((AddRes) response).newId + " успешно добавлен!");
-            return true;
+            if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
+                console.println("Новый City с id=" + ((AddRes) response).newId + " успешно добавлен!");
+                return true;
+            }
 
         } catch (WrongAmountOfElements exception) {
             console.printError("Неправильное количество аргументов!");
@@ -66,5 +66,4 @@ public class Add extends Command {
         } catch (IncorrectInputInScript ignored) {}
         return false;
     }
-
 }

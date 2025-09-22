@@ -1,8 +1,10 @@
 package server.handler;
 
 import common.build.request.Request;
+import common.build.response.NotLoggedInRes;
 import common.build.response.Response;
 import common.build.response.NoSuchCommandRes;
+import common.build.response.ServerErrorRes;
 import org.slf4j.Logger;
 import server.ServerApp;
 import server.managers.AuthManager;
@@ -22,14 +24,43 @@ public class CommandHandler {
     }
 
     public Response handle(Request request) throws SQLException {
-        if (!request.isAuth()) {
-            var user = request.getUser();
-            if (user == null || authManager.authenticateUser(user.getName(), user.getPassword()) <= 0) {
-                throw new BadCredentialsException("Неверные учетные данные. Пожалуйста, войдите в свой аккаунт.");
+        try {
+            // Проверка аутентификации
+            if (!request.isAuth()) {
+                var user = request.getUser();
+
+                if (user == null) {
+                    return new NotLoggedInRes("Пользователь не предоставлен для аутентификации");
+                }
+
+                if (authManager.authenticateUser(user.getName(), user.getPassword()) <= 0) {
+                    return new NotLoggedInRes("Неверные учетные данные. Пожалуйста, войдите в свой аккаунт.");
+                }
             }
+
+            // Получение команды
+            String commandName = request.getName();
+            var command = manager.getCommands().get(commandName);
+
+            if (command == null) {
+                return new NoSuchCommandRes(commandName);
+            }
+
+            // Выполнение команды
+            return command.apply(request);
+
+        } catch (BadCredentialsException e) {
+            logger.warn("Ошибка аутентификации для пользователя {}", request.getUser().getName());
+            return new NotLoggedInRes(e.getMessage());
+        } catch (NullPointerException e) {
+            return new ServerErrorRes("Внутренняя ошибка сервера: " + e.getMessage());
+        } catch (SQLException e) {
+            logger.error("SQL ошибка при обработке запроса: {}", request, e);
+            return new ServerErrorRes("Ошибка базы данных: " + e.getMessage());
+        } catch (Exception e) {
+            logger.error("Непредвиденная ошибка при обработке запроса: {}", request, e);
+            return new ServerErrorRes("Произошла непредвиденная ошибка: " + e.getMessage());
         }
-        var command = manager.getCommands().get(request.getName());
-        if (command == null) return new NoSuchCommandRes(request.getName());
-        return command.apply(request);
     }
+
 }

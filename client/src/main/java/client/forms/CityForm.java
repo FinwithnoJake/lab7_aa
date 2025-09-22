@@ -6,8 +6,6 @@ import common.exceptions.*;
 import common.model.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.NoSuchElementException;
@@ -59,7 +57,6 @@ public class CityForm extends Form<City> {
                 System.exit(0);
             }
         }
-
         return name;
     }
     private Coordinates getCoordinates() throws IncorrectInputInScript, InvalidForm {
@@ -83,9 +80,8 @@ public class CityForm extends Form<City> {
                 LocalDate date = LocalDate.parse(input, formatter);
                 // Дополнительная валидация (например, проверка на будущее время)
                 if (date.isAfter(LocalDate.now().plusYears(1))) {
-                    throw new InvalidForm("Ты еще и путешественник во времени!");
+                    throw new InvalidForm("Ты еще и путешественник во времени!\nЛадно уж, год накинули, с расчетом на скорое открытие, но ты явно борщишь");
                 }
-
                 return date;
 
             } catch (DateTimeParseException e) {
@@ -127,7 +123,7 @@ public class CityForm extends Form<City> {
                 String input = Interrogator.getUserScanner().nextLine().trim().toLowerCase();
                 if (fileMode) {console.println(input);}
                 float area = Float.parseFloat(input);
-                if (area <= 0) {throw new InvalidForm("Че, прям совсем никого, приколист?");}
+                if (area <= 0) {throw new InvalidForm("Че?");}
                 return area;
             } catch (NoSuchElementException e) {
                 console.printError("Ответ не распознан!");
@@ -156,6 +152,7 @@ public class CityForm extends Form<City> {
                 String input = Interrogator.getUserScanner().nextLine().trim();
                 if (fileMode) {console.println(input);}
                 long population = Long.parseLong(input);
+                if (population <= 0) {throw new InvalidForm("Ты один?(((");}
                 if (population <= 0) {throw new InvalidForm("Ты один или с трупами живешь, умник?");}
                 return population;
             } catch (NoSuchElementException e) {
@@ -186,7 +183,7 @@ public class CityForm extends Form<City> {
                 if (fileMode) {console.println(input);}
                 float meters = Float.parseFloat(input);
                 if (meters < -11000 || meters > 9000) {
-                    throw new InvalidForm("Значение должно быть в диапазоне от -11000 до 9000 метров\nOr maybe u r an alian?)");
+                    throw new InvalidForm("Значение должно быть в диапазоне от -11000 до 9000 метров\nOr maybe u r an alien?)");
                 }
 
                 return meters; // Возвращаем значение при успешном вводе
@@ -299,7 +296,6 @@ public class CityForm extends Form<City> {
                 System.exit(0);
             }
         }
-
         return human;
     }
 }

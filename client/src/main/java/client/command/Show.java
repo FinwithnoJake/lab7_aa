@@ -11,7 +11,6 @@ import java.io.IOException;
 
 /**
  * Команда 'show'. Выводит все элементы коллекции.
- *
  */
 public class Show extends Command {
     private final Console console;
@@ -19,7 +18,6 @@ public class Show extends Command {
 
     /**
      * Instantiates a new Show.
-     *
      * @param console the console
      * @param client  the client
      */
@@ -38,18 +36,27 @@ public class Show extends Command {
         try {
             if (!arguments[1].isEmpty()) throw new WrongAmountOfElements();
 
-            var response = (ShowRes) client.sendAndReceiveCommand(new ShowReq(SessionHandler.getCurrentUser()));
+            var response = client.sendAndReceiveCommand(new ShowReq(SessionHandler.getCurrentUser()));
             if (response.getError() != null && !response.getError().isEmpty()) {
                 throw new API(response.getError());
             }
 
-            if (response.city.isEmpty()) {
-                console.println("Коллекция пуста!");
-                return true;
+            if (response.getClass().equals(NotLoggedInRes.class)) {
+                console.printError("Вы не залогинены, войдите");
             }
+            if (response.getClass().equals(NoSuchCommandRes.class)) {
+                console.printError("???");
+            }
+            if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
+                if (((ShowRes) response).city.isEmpty()) {
+                    console.println("Коллекция пуста!");
+                    return true;
+                }
 
-            for (var person : response.city) {
-                console.println(person + "\n");
+                for (var city : ((ShowRes) response).city) {
+                    console.println(city + "\n");
+                }
+                return true;
             }
             return true;
         } catch (WrongAmountOfElements exception) {
@@ -60,6 +67,10 @@ public class Show extends Command {
         } catch (API e) {
             console.printError(e.getMessage());
         }
+        return false;
+    }
+    @Override
+    public boolean isNeedAuth() {
         return false;
     }
 }

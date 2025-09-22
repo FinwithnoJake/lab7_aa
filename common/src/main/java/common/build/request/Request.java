@@ -58,4 +58,11 @@ public abstract class Request implements Serializable {
         return false;
     }
 
+    public boolean hasParameter(String sort) {
+        return false;
+    }
+
+    public String getParameter(String sort) {
+        return null;
+    }
 }

@@ -3,10 +3,7 @@ package common.model;
 import common.util.Element;
 
 import java.io.Serial;
-import java.sql.Date;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class City extends Element {
@@ -25,7 +22,6 @@ public class City extends Element {
     private Government government; //Поле не может быть null
     private String human; //Поле может быть null
     private int ownerId;
-
 
     public City(
             int id,
@@ -53,8 +49,8 @@ public class City extends Element {
         this.human = human;
         this.ownerId = ownerId;
     }
-
     public City(){}
+
     /**
      * Валидирует правильность полей.
      * @return true, если все поля корректны, иначе false.
@@ -91,7 +87,6 @@ public class City extends Element {
     public int getId(){
         return id;
     }
-
     public String getName(){
         return name;
     }
@@ -162,22 +157,6 @@ public class City extends Element {
                 "\n Тип власти: " + government +
                 "\n Личность: " + (human != null ? human : "None")
                 ;
-    }
-
-    public static String[] toArray(City e) {
-    var list = new ArrayList<String>();
-    list.add(String.valueOf((e.getId())));
-    list.add(e.getName());
-    list.add(e.getCoordinates().toString());
-    list.add(e.getCreationDate().format(DateTimeFormatter.ISO_DATE_TIME));
-    list.add(String.valueOf(e.getArea()));
-    list.add(e.getPopulation().toString());
-    list.add(String.valueOf(e.getMetersAboveSeaLevel()));
-    list.add(e.getCarCode().toString());
-    list.add(String.valueOf(e.getAgglomeration()));
-    list.add(e.getGovernment() == null ? "null" : e.getGovernment().toString());
-    list.add(e.getHuman() == null ? "null" : e.getHuman().toString());
-    return list.toArray(new String[0]);
     }
 
     @Override

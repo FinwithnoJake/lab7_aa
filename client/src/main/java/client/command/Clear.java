@@ -28,9 +28,15 @@ public class Clear extends Command {
         try {
             if (!arguments[1].isEmpty()) throw new WrongAmountOfElements();
 
-            var response = (ClearRes) client.sendAndReceiveCommand(new ClearReq(SessionHandler.getCurrentUser()));
+            var response = client.sendAndReceiveCommand(new ClearReq(SessionHandler.getCurrentUser()));
             if (response.getError() != null && !response.getError().isEmpty()) {
                 throw new API(response.getError());
+            }
+            if (response.getClass().equals(NotLoggedInRes.class)) {
+                console.printError("Вы не залогинены, войдите");
+            }
+            if (response.getClass().equals(NoSuchCommandRes.class)) {
+                console.printError("???");
             }
 
             console.println("Коллекция очищена!");

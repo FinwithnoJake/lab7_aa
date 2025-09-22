@@ -37,18 +37,26 @@ public class Tail extends Command {
         try {
             if (!arguments[1].isEmpty()) throw new WrongAmountOfElements();
 
-            var response = (TailRes) client.sendAndReceiveCommand(new TailReq(SessionHandler.getCurrentUser()));
+            var response = client.sendAndReceiveCommand(new TailReq(SessionHandler.getCurrentUser()));
             if (response.getError() != null && !response.getError().isEmpty()) {
                 throw new API(response.getError());
             }
 
-            if (response.city == null) {
-                console.println("Коллекция пуста!");
+            if (response.getClass().equals(NotLoggedInRes.class)) {
+                console.printError("Вы не залогинены, войдите");
+            }
+            if (response.getClass().equals(NoSuchCommandRes.class)) {
+                console.printError("???");
+
+                if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
+                    if (((TailRes) response).city == null) {
+                        console.println("Коллекция пуста!");
+                        return true;
+                    }
+                }
+                console.println(((TailRes) response).city);
                 return true;
             }
-
-            console.println(response.city);
-            return true;
         } catch (WrongAmountOfElements exception) {
             console.printError("Неправильное количество аргументов!");
             console.println("Использование: '" + getName() + "'");

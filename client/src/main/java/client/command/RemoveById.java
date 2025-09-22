@@ -39,13 +39,21 @@ public class RemoveById extends Command {
             if (arguments[1].isEmpty()) throw new WrongAmountOfElements();
             var id = Integer.parseInt(arguments[1]);
 
-            var response = (RemoveByIdRes) client.sendAndReceiveCommand(new RemoveByIdReq(id, SessionHandler.getCurrentUser()));
+            var response = client.sendAndReceiveCommand(new RemoveByIdReq(id, SessionHandler.getCurrentUser()));
             if (response.getError() != null && !response.getError().isEmpty()) {
                 throw new API(response.getError());
             }
 
-            console.println("City успешно удален.");
-            return true;
+            if (response.getClass().equals(NotLoggedInRes.class)) {
+                console.printError("Вы не залогинены, войдите");
+            }
+            if (response.getClass().equals(NoSuchCommandRes.class)) {
+                console.printError("???");
+            }
+            if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
+                console.println("Продукт успешно удален.");
+                return true;
+            }
         } catch (WrongAmountOfElements exception) {
             console.printError("Неправильное количество аргументов!");
             console.println("Использование: '" + getName() + "'");

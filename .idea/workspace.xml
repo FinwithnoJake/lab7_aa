@@ -4,7 +4,92 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d0b3b4e-7f7a-49b6-af85-bbbc1ac0b55c" name="Changes" comment="bob" />
+    <list default="true" id="8d0b3b4e-7f7a-49b6-af85-bbbc1ac0b55c" name="Changes" comment="bob">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/common/build/response/ServerErrorRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/city/add.txt" beforeDir="false" afterPath="$PROJECT_DIR$/city/add.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner$ExitCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner$ExitCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/cl/Runner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Add.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Auth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Clear.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Clear.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Head.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/RemoveById.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/RemoveById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Show.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Tail.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Tail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Update.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/command/Update.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/CityForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/classes/java/main/client/forms/CityForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/client/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Head.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Head.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/SumOfPopulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/SumOfPopulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Tail.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Tail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/command/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/command/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/forms/CityForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/forms/CityForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/build/request/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/classes/java/main/common/build/request/Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/build/response/SumOfIPopulationRes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/exceptions/InvalidForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/classes/java/main/common/exceptions/InvalidForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/classes/java/main/common/model/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/classes/java/main/common/model/City.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/libs/common.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/libs/common.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/common/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/build/request/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/build/request/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/exceptions/InvalidForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/exceptions/InvalidForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/common/model/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/common/model/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/ServerApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Show.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Tail.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/commands/Tail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/handler/CommandHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/handler/CommandHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/managers/AuthManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/managers/AuthManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/managers/LoadManager$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/managers/LoadManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/network/TCPDatagramServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/network/TCPDatagramServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/network/TCPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/network/TCPServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/repo/auth/exceptions/BadCredentialsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/repo/auth/exceptions/BadCredentialsException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/repo/auth/exceptions/UserNotExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/repo/auth/exceptions/UserNotExistException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/server/service/CityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/server/service/CityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/distributions/server.tar" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/distributions/server.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/distributions/server.zip" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/distributions/server.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/libs/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/libs/server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/logs/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/logs/server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/ServerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/commands/Tail.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/commands/Tail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/handler/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/handler/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/managers/AuthManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/managers/AuthManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/managers/LoadManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/network/TCPDatagramServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/network/TCPDatagramServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/network/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/network/TCPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/repo/auth/exceptions/BadCredentialsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/repo/auth/exceptions/BadCredentialsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/repo/auth/exceptions/UserNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/repo/auth/exceptions/UserNotExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/CityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/CityService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +130,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -64,18 +150,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/root/Documents/IdeaProjects/lab7_aa",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/root/Documents/IdeaProjects/lab7_aa&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/src/main/java/server" />
@@ -94,13 +180,13 @@
       <recent name="common.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.lab7_aa:server [run]">
-    <configuration name="ClientApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="client.ClientApp" />
-      <module name="lab7_aa.client.main" />
+  <component name="RunManager" selected="Gradle.lab7_aa:client [run]">
+    <configuration name="ServerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="server.ServerApp" />
+      <module name="lab7_aa.server.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="client.*" />
+          <option name="PATTERN" value="server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,10 +194,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="lab7_aa [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="lab7_aa:client [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="lab7_aa:server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -130,10 +238,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="lab7_aa [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="lab7_aa:server [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -142,28 +250,6 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="lab7_aa:client [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -198,11 +284,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.lab7_aa:server [run]" />
-        <item itemvalue="Gradle.lab7_aa [build]" />
-        <item itemvalue="Gradle.lab7_aa [clean]" />
         <item itemvalue="Gradle.lab7_aa:client [run]" />
-        <item itemvalue="Application.ClientApp" />
+        <item itemvalue="Gradle.lab7_aa:server [run]" />
+        <item itemvalue="Gradle.lab7_aa:server [build]" />
+        <item itemvalue="Gradle.lab7_aa:server [clean]" />
+        <item itemvalue="Application.ServerApp" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758159574598</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bob">
+      <option name="closed" value="true" />
+      <created>1758159952054</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758159952054</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +371,21 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/cl/Runner.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,13 +6,13 @@ import server.repo.CityNativeBasedRepository;
 import server.service.CityService;
 
 /**
- * Команда 'head'. Выводит last элемент коллекции.
+ * Команда 'tail'. Выводит last элемент коллекции.
  */
 public class Tail extends Command {
     private final CityService service;
 
     public Tail(CityService service) {
-        super("last", "вывести последний элемент коллекции");
+        super("tail", "вывести последний элемент коллекции");
         this.service = service;
     }
 

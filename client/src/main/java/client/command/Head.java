@@ -37,18 +37,26 @@ public class Head extends Command {
         try {
             if (!arguments[1].isEmpty()) throw new WrongAmountOfElements();
 
-            var response = (HeadRes) client.sendAndReceiveCommand(new HeadReq(SessionHandler.getCurrentUser()));
+            var response = client.sendAndReceiveCommand(new HeadReq(SessionHandler.getCurrentUser()));
             if (response.getError() != null && !response.getError().isEmpty()) {
                 throw new API(response.getError());
             }
 
-            if (response.city == null) {
-                console.println("Коллекция пуста!");
+            if (response.getClass().equals(NotLoggedInRes.class)) {
+                console.printError("Вы не залогинены, войдите");
+            }
+            if (response.getClass().equals(NoSuchCommandRes.class)) {
+                console.printError("???");
+
+                if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
+                    if (((HeadRes) response).city == null) {
+                        console.println("Коллекция пуста!");
+                        return true;
+                    }
+                }
+                console.println(((HeadRes) response).city);
                 return true;
             }
-
-            console.println(response.city);
-            return true;
         } catch (WrongAmountOfElements exception) {
             console.printError("Неправильное количество аргументов!");
             console.println("Использование: '" + getName() + "'");

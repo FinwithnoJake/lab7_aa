@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 /**
- * The type Udp datagram server.
+ * The type tcp datagram server.
  */
 public class TCPDatagramServer extends TCPServer {
     private final int PACKET_SIZE = 1024;

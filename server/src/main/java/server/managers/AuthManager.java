@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 public class AuthManager {
 
-    private final int SALT_LENGTH = 10;
+    private static final int SALT_LENGTH = 10;
     private final String pepper;
     private final Logger logger = ServerApp.logger;
     private final AuthRepository authRepository;
@@ -26,41 +26,58 @@ public class AuthManager {
     }
 
     public int registerUser(String login, String password) throws SQLException {
-        logger.info("Создание нового черта " + login);
+        logger.info("Создание нового бро{}", login);
 
+        // Проверка на пустые значения
+        if (login == null || password == null) {
+            throw new IllegalArgumentException("Логин и пароль не могут быть пустыми");
+        }
+
+        // Проверка уникальности логина
+
+        // Генерация соли и хеша
         var salt = generateSalt();
         var passwordHash = generatePasswordHash(password, salt);
 
+        // Создание пользователя
         var user = new User();
         user.setName(login);
         user.setPassword(passwordHash);
         user.setSalt(salt);
 
         int id = authRepository.addNewUser(user);
-
-        logger.info("Чертила успешно сОздАн, id#" + id);
+        logger.info("БрО успешно сОздАн, id= {}", id);
         return id;
     }
 
     public int authenticateUser(String login, String password) throws SQLException {
-        logger.info("Аутентификация чертугана " + login);
-        User user = authRepository.findUserByUsername(login);
+        logger.info("Аутентификация бро {}", login);
 
-        if (user == null) {
-            throw new UserNotExistException();
+        // Проверка на пустые значения
+        if (login == null || password == null) {
+            throw new IllegalArgumentException("Логин и пароль не могут быть пустыми");
         }
 
-        var id = user.getId();
-        var salt = user.getSalt();
-        var expectedHashedPassword = user.getPassword();
-        var actualHashedPassword = generatePasswordHash(password, salt);
-        if (expectedHashedPassword.equals(actualHashedPassword)) {
-            logger.info("Лох " + login + " аутентифицирован c id#" + id);
-            return id;
-        } else {
-            logger.warn(
-                    "Неправильный пароль для лОхА " + login +
-                            ". Ожидалось '" + expectedHashedPassword + "', получено '" + actualHashedPassword + "'");
+        try {
+            User user = authRepository.findUserByUsername(login);
+            if (user == null) {
+                throw new UserNotExistException("Бро не существует");
+            }
+
+            var id = user.getId();
+            var salt = user.getSalt();
+            var expectedHashedPassword = user.getPassword();
+            var actualHashedPassword = generatePasswordHash(password, salt);
+
+            if (expectedHashedPassword.equals(actualHashedPassword)) {
+                logger.info("Бро {} успешно аутентифицирован, ID: {}", login, id);
+                return id;
+            } else {
+                logger.warn("Неудачная попытка аутентификации для бро {}", login);
+            }
+        } catch (UserNotExistException e) {
+            logger.warn("Бро {} не найден", login);
+            throw e;
         }
 
         return -1;

@@ -141,4 +141,8 @@ public class CityService {
 
     public void exit(User user) {
     }
+
+    public List<City> getAllCities() {
+        return null;
+    }
 }

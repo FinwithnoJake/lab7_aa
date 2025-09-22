@@ -49,7 +49,7 @@ public class Update extends Command {
             console.println("* Введите данные обновленного продукта:");
             var updatedCity = (new CityForm(console)).build();
 
-            var response = (UpdateRes) client.sendAndReceiveCommand(new UpdateReq(id, updatedCity, SessionHandler.getCurrentUser()));
+            var response = client.sendAndReceiveCommand(new UpdateReq(id, updatedCity, SessionHandler.getCurrentUser()));
             if (response.getError() != null && !response.getError().isEmpty()) {
                 throw new API(response.getError());
             }
@@ -58,7 +58,7 @@ public class Update extends Command {
                 console.printError("Вы не залогинены, войдите");
             }
             if (response.getClass().equals(NoSuchCommandRes.class)) {
-                console.printError("??? дурачок залогинься");
+                console.printError("???");
             }
             if (response.getClass().equals(getTargetClassCastOrErrorResponse(this.getClass()))) {
                 console.println("Продукт успешно обновлен.");

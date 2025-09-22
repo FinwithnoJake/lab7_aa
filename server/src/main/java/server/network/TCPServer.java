@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.net.SocketException;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.RecursiveAction;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * UDP обработчик запросов
@@ -25,144 +28,178 @@ abstract class TCPServer {
     private final InetSocketAddress addr;
     private final CommandHandler commandHandler;
     private Runnable afterHook;
-
+    //    private final int service;
+    private final ForkJoinPool responsePool;
     private final Logger logger = ServerApp.logger;
 
     private boolean running = true;
 
-    /**
-     * Instantiates a new Udp server.
-     * @param addr           the addr
-     * @param commandHandler the command handler
-     */
     public TCPServer(InetSocketAddress addr, CommandHandler commandHandler) {
-        if (addr == null) {
-            throw new IllegalArgumentException("Адрес не может быть null");
-        }
-        if (commandHandler == null) {
-            throw new IllegalArgumentException("CommandHandler не может быть null");
-        }
         this.addr = addr;
         this.commandHandler = commandHandler;
+//        this.service = ForkJoinPool.getCommonPoolParallelism();
+        this.responsePool = ForkJoinPool.commonPool();
+//        new ForkJoinPool()
     }
 
-    /**
-     * Gets addr.
-     * @return the addr
-     */
     public InetSocketAddress getAddr() {
         return addr;
-    }
-    public CommandHandler getCommandHandler() {
-        return commandHandler;
     }
 
     /**
      * Получает данные с клиента.
      * Возвращает пару из данных и адреса клиента
-     * @return the pair
-     * @throws IOException the io exception
      */
     public abstract Pair<Byte[], SocketAddress> receiveData() throws IOException;
 
     /**
      * Отправляет данные клиенту
-     * @param data the data
-     * @param addr the addr
-     * @throws IOException the io exception
      */
     public abstract void sendData(byte[] data, SocketAddress addr) throws IOException;
 
-    /**
-     * Connect to client.
-     * @param addr the addr
-     * @throws SocketException the socket exception
-     */
     public abstract void connectToClient(SocketAddress addr) throws SocketException;
 
-    /**
-     * Disconnect from client.
-     */
     public abstract void disconnectFromClient();
 
-    /**
-     * Close.
-     */
     public abstract void close();
 
-    /**
-     * Run.
-     */
     public void run() {
         logger.info("Сервер запущен по адресу " + addr);
 
         while (running) {
-            Pair<Byte[], SocketAddress> dataPair;
             try {
-                dataPair = receiveData();
+                Pair<Byte[], SocketAddress> dataPair = receiveData();
+
+                responsePool.submit(() -> {
+                    var dataFromClient = dataPair.getKey();
+                    var clientAddr = dataPair.getValue();
+
+                    try {
+                        logger.info("Соединено с " + clientAddr);
+                    } catch (Exception e) {
+                        logger.error("Ошибка соединения с клиентом : " + e.toString(), e);
+                    }
+
+                    try {
+                        Request request = SerializationUtils.deserialize(ArrayUtils.toPrimitive(dataFromClient));
+                        logger.info("Обработка " + request + " из " + clientAddr);
+
+                        responsePool.submit(() -> {
+                            Response response = null;
+                            try {
+                                response = commandHandler.handle(request);
+                            } catch (Exception e) {
+                                logger.error("Ошибка выполнения команды : " + e.toString(), e);
+                            }
+                            if (response == null) response = new NoSuchCommandRes(request.getName());
+
+                            var data = SerializationUtils.serialize(response);
+                            logger.info("Ответ: " + response);
+
+                            responsePool.submit(() -> {
+                                try {
+                                    sendData(data, clientAddr);
+                                    logger.info("Отправлен ответ клиенту " + clientAddr);
+                                } catch (Exception e) {
+                                    logger.error("Ошибка ввода-вывода : " + e.toString(), e);
+                                }
+                            });
+                        });
+
+                    } catch (SerializationException e) {
+                        logger.error("Невозможно десериализовать объект запроса.", e);
+                        disconnectFromClient();
+                    }
+
+                    disconnectFromClient();
+                    logger.info("Отключение от клиента " + clientAddr);
+                });
+
             } catch (Exception e) {
                 logger.error("Ошибка получения данных : " + e.toString(), e);
                 disconnectFromClient();
-                continue;
             }
-
-            var dataFromClient = dataPair.getKey();
-            var clientAddr = dataPair.getValue();
-
-            try {
-                connectToClient(clientAddr);
-                logger.info("Соединено с " + clientAddr);
-            } catch (Exception e) {
-                logger.error("Ошибка соединения с клиентом : " + e.toString(), e);
-            }
-
-            Request request;
-            try {
-                request = SerializationUtils.deserialize(ArrayUtils.toPrimitive(dataFromClient));
-                logger.info("Обработка " + request + " из " + clientAddr);
-            } catch (SerializationException e) {
-                logger.error("Невозможно десериализовать объект запроса.", e);
-                disconnectFromClient();
-                continue;
-            }
-
-            Response response = null;
-            try {
-                response = commandHandler.handle(request);
-                if (afterHook != null) afterHook.run();
-            } catch (Exception e) {
-                logger.error("Ошибка выполнения команды : " + e.toString(), e);
-            }
-            if (response == null) response = new NoSuchCommandRes(request.getName());
-
-            var data = SerializationUtils.serialize(response);
-            logger.info("Ответ: " + response);
-
-            try {
-                sendData(data, clientAddr);
-                logger.info("Отправлен ответ клиенту " + clientAddr);
-            } catch (Exception e) {
-                logger.error("Ошибка ввода-вывода : " + e.toString(), e);
-            }
-
-            disconnectFromClient();
-            logger.info("Отключение от клиента " + clientAddr);
         }
-
+        // ЧТОБ УЖ НАВЕРНЯКА, НЕ СПРАШИВАЙТЕ ПОЧЕМУ 3 РАЗА, захотела.
+        responsePool.shutdown();
+        responsePool.shutdown();
+        responsePool.shutdown();
         close();
     }
 
+    private RecursiveAction serverReceive(Pair<Byte[], SocketAddress> dataPair) {
+
+        return new RecursiveAction() {
+            @Override
+            protected void compute() {
+
+
+                var dataFromClient = dataPair.getKey();
+                var clientAddr = dataPair.getValue();
+
+                try {
+                    connectToClient(clientAddr);
+                    logger.info("Соединено с " + clientAddr);
+                } catch (Exception e) {
+                    logger.error("Ошибка соединения с клиентом : " + e.getMessage(), e);
+                }
+
+                Request request = null;
+                try {
+                    request = SerializationUtils.deserialize(ArrayUtils.toPrimitive(dataFromClient));
+                    logger.info("Обработка " + request + " из " + clientAddr);
+                } catch (SerializationException e) {
+                    logger.error("Невозможно десериализовать объект запроса." + e.getMessage(), e);
+                    disconnectFromClient();
+                }
+
+                AtomicReference<Response> response = new AtomicReference<>(null);
+                Request finalRequest = request;
+                Thread thread = new Thread(() -> {
+                    try {
+                        assert finalRequest != null;
+                        response.set(commandHandler.handle(finalRequest));
+                        if (afterHook != null) afterHook.run();
+                    } catch (Exception e) {
+                        logger.error("Ошибка выполнения команды : " + e.getMessage(), e);
+                    }
+                    if (response.get() == null) response.set(new NoSuchCommandRes(finalRequest.getName()));
+                });
+
+                thread.start();
+
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                var data = SerializationUtils.serialize(response.get());
+                logger.info("Ответ: " + response);
+
+                try {
+                    sendData(data, clientAddr);
+                    logger.info("Отправлен ответ клиенту " + clientAddr);
+                } catch (Exception e) {
+                    logger.error("Ошибка ввода-вывода : " + e.getMessage(), e);
+                }
+
+                disconnectFromClient();
+                logger.info("Отключение от клиента " + clientAddr);
+            }
+        };
+    }
+
+
     /**
      * Вызывает хук после каждого запроса.
+     *
      * @param afterHook хук, вызываемый после каждого запроса
      */
     public void setAfterHook(Runnable afterHook) {
         this.afterHook = afterHook;
     }
 
-    /**
-     * Stop.
-     */
     public void stop() {
         running = false;
     }

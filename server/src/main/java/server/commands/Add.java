@@ -12,7 +12,7 @@ public class Add extends Command {
 
     /**
      * Instantiates a new Add.
-     * @param cityServise the city servise
+     * @param cityService the city servise
      */
     public Add(CityService cityService) {
         super("add {element}", "добавить новый элемент в коллекцию");
